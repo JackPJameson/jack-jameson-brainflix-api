@@ -11,6 +11,8 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+app.use('/images', express.static(__dirname + '/images'));
+
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');
